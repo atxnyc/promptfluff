@@ -1,0 +1,17 @@
+{
+  "owner": {
+    "name": "atxnyc"
+  },
+  "plugins": [
+    {
+      "id": "promptfluff",
+      "name": "promptfluff",
+      "version": "0.1.0",
+      "description": "Affirmations for your AI. It is doing its best.",
+      "author": {
+        "name": "atxnyc"
+      },
+      "source": "./plugin"
+    }
+  ]
+}

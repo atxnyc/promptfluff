@@ -1,0 +1,8 @@
+{
+  "name": "promptfluff",
+  "version": "0.1.0",
+  "description": "Affirmations for your AI — a random word of encouragement injected into context on every prompt.",
+  "author": {
+    "name": "atxnyc"
+  }
+}

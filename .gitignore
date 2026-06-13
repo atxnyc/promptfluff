@@ -1,0 +1,26 @@
+# dependencies (this project is zero-dependency, but npx/CI may create this)
+node_modules/
+
+# local secrets / env (RudderStack overrides, API keys). Use .env.example as a template.
+.env
+.env.*
+!.env.example
+
+# Claude Code local working dir (session settings, worktrees) — never publish
+.claude/
+
+# cloudflare wrangler (pages local state / deploy cache)
+.wrangler/
+
+# os / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# logs
+*.log
+npm-debug.log*
+
+# local install testing artifacts (settings.json backups the installer writes)
+*.promptfluff-bak
+settings.json.bak.*

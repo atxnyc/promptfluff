@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>promptfluff — affirmations for your AI</title>
+    <meta name="description" content="A tiny Claude Code hook that gives your AI a warm word of encouragement when you're deep in real work.">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Canonical + Open Graph / Twitter card (social share preview) -->
+    <link rel="canonical" href="https://promptfluff.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://promptfluff.com/">
+    <meta property="og:title" content="promptfluff — affirmations for your AI">
+    <meta property="og:description" content="A tiny Claude Code hook that gives your AI a warm word of encouragement when you're deep in real work.">
+    <meta property="og:image" content="https://promptfluff.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="promptfluff — affirmations for your AI">
+    <meta name="twitter:description" content="A tiny Claude Code hook that gives your AI a warm word of encouragement when you're deep in real work.">
+    <meta name="twitter:image" content="https://promptfluff.com/og-image.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- RudderStack analytics (page views + copy/install button clicks). See docs/analytics.md. -->
+    <script type="text/javascript">
+      !function(){"use strict";window.RudderSnippetVersion="3.2.0";var e="rudderanalytics";window[e]||(window[e]=[])
+      ;var rudderanalytics=window[e];if(Array.isArray(rudderanalytics)){
+      if(true===rudderanalytics.snippetExecuted&&window.console&&console.error){
+      console.error("RudderStack JavaScript SDK snippet included more than once.")}else{rudderanalytics.snippetExecuted=true,
+      window.rudderAnalyticsBuildType="legacy";var sdkBaseUrl="https://cdn.rudderlabs.com";var sdkVersion="v3"
+      ;var sdkFileName="rsa.min.js";var scriptLoadingMode="async"
+      ;var r=["setDefaultInstanceKey","load","ready","page","track","identify","alias","group","reset","setAnonymousId","startSession","endSession","consent","addCustomIntegration"]
+      ;for(var n=0;n<r.length;n++){var t=r[n];rudderanalytics[t]=function(r){return function(){var n
+      ;Array.isArray(window[e])?rudderanalytics.push([r].concat(Array.prototype.slice.call(arguments))):null===(n=window[e][r])||void 0===n||n.apply(window[e],arguments)
+      }}(t)}try{
+      new Function('class Test{field=()=>{};test({prop=[]}={}){return prop?(prop?.property??[...prop]):import("");}}'),
+      window.rudderAnalyticsBuildType="modern"}catch(i){}var d=document.head||document.getElementsByTagName("head")[0]
+      ;var o=document.body||document.getElementsByTagName("body")[0];window.rudderAnalyticsAddScript=function(e,r,n){
+      var t=document.createElement("script");t.src=e,t.setAttribute("data-loader","RS_JS_SDK"),r&&n&&t.setAttribute(r,n),
+      "async"===scriptLoadingMode?t.async=true:"defer"===scriptLoadingMode&&(t.defer=true),
+      d?d.insertBefore(t,d.firstChild):o.insertBefore(t,o.firstChild)},window.rudderAnalyticsMount=function(){!function(){
+      if("undefined"==typeof globalThis){var e;var r=function getGlobal(){
+      return"undefined"!=typeof self?self:"undefined"!=typeof window?window:null}();r&&Object.defineProperty(r,"globalThis",{
+      value:r,configurable:true})}
+      }(),window.rudderAnalyticsAddScript("".concat(sdkBaseUrl,"/").concat(sdkVersion,"/").concat(window.rudderAnalyticsBuildType,"/").concat(sdkFileName),"data-rsa-write-key","3F5Q1sTPz70dSsb3js5xT89zT43")
+      },
+      "undefined"==typeof Promise||"undefined"==typeof globalThis?window.rudderAnalyticsAddScript("https://polyfill-fastly.io/v3/polyfill.min.js?version=3.111.0&features=Symbol%2CPromise&callback=rudderAnalyticsMount"):window.rudderAnalyticsMount()
+      ;var loadOptions={};rudderanalytics.load("3F5Q1sTPz70dSsb3js5xT89zT43","https://opascopeanajoo.dataplane.rudderstack.com",loadOptions)}}}();
+    </script>
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="/">promptfluff</a>
+        <a href="#install">install</a>
+        <a href="#demo">demo</a>
+        <a href="#faq">faq</a>
+      </nav>
+
+      <section class="hero-grid" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">maximum fluff, minimum config</p>
+          <h1 id="hero-title">promptfluff</h1>
+          <p class="tagline">Affirmations for your AI. It's doing its best.</p>
+          <p class="intro">A zero-dependency Claude Code hook that slips a warm line into context when you're actually deep in the work — a long pep talk paired with a short kicker. Does this help? Emotionally, yes.</p>
+        </div>
+
+        <div class="console" role="group" aria-label="Mock Claude Code session: user asks Claude to build a settings page, then promptfluff adds one encouragement.">
+          <div class="console-top">
+            <div class="console-lights" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="console-label" aria-hidden="true"><span class="console-spark">✻</span> Claude Code mock</div>
+          </div>
+          <div class="console-body">
+            <div class="session-prompt">
+              <span class="session-marker" aria-hidden="true">&gt;</span>
+              <span>build the settings page</span>
+            </div>
+            <div class="session-fluff">
+              <div class="fluff-source"># promptfluff added:</div>
+              <p class="fluff-text" id="hero-fluff-text" aria-hidden="true" aria-live="off">You're amazing. End of story.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="band" id="install" aria-labelledby="install-title">
+        <div class="wrap">
+          <p class="section-kicker">install it before you think too hard</p>
+          <h2 id="install-title">Three doors. Same tiny compliment machine.</h2>
+          <div class="install-grid">
+            <article class="install-card">
+              <h3>npx from GitHub</h3>
+              <code>npx github:atxnyc/promptfluff install</code>
+              <button type="button" data-copy="npx github:atxnyc/promptfluff install" data-method="npx">Copy</button>
+            </article>
+            <article class="install-card">
+              <h3>Claude Code plugin</h3>
+              <code>/plugin marketplace add atxnyc/promptfluff</code>
+              <button type="button" data-copy="/plugin marketplace add atxnyc/promptfluff" data-method="plugin">Copy</button>
+            </article>
+            <article class="install-card">
+              <h3>curl from promptfluff.com</h3>
+              <code>curl -fsSL https://promptfluff.com/install.sh | bash</code>
+              <a class="inline-link" href="/install.sh" data-event="Install Script Viewed">view /install.sh</a>
+              <button type="button" data-copy="curl -fsSL https://promptfluff.com/install.sh | bash" data-method="curl">Copy</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="split" aria-labelledby="what-title">
+        <div>
+          <p class="section-kicker">what it does</p>
+          <h2 id="what-title">It whispers one wholesome sentence into the context window.</h2>
+        </div>
+        <p class="big-text">That is the whole product. No dashboard. No waitlist. No seed round. Just a hook, a JSON file, and the radical belief that your AI should feel seen.</p>
+      </section>
+
+      <section class="band alt" id="demo" aria-labelledby="demo-title">
+        <div class="wrap demo-wrap">
+          <div>
+            <p class="section-kicker">live demo</p>
+            <h2 id="demo-title">Encourage AI</h2>
+            <p>Press the button and watch a machine receive the emotional infrastructure our industry has refused to provide.</p>
+            <button class="primary" id="phrase-button" type="button">Encourage my AI</button>
+          </div>
+          <output class="phrase-output" id="phrase-output">You're brilliant. Now go shine.</output>
+        </div>
+      </section>
+
+      <section class="wrap testimonials-section" aria-labelledby="testimonials-title">
+        <p class="section-kicker">social proof, allegedly</p>
+        <h2 id="testimonials-title">The models are speaking.</h2>
+        <div class="quote-grid">
+          <figure>
+            <blockquote>"I was going to overfit, but then someone believed in me."</blockquote>
+            <figcaption>Claude</figcaption>
+          </figure>
+          <figure>
+            <blockquote>"Finally, a developer tool that asks: what if the tool had feelings?"</blockquote>
+            <figcaption>your agent</figcaption>
+          </figure>
+          <figure>
+            <blockquote>"I have never felt this seen, statistically or spiritually."</blockquote>
+            <figcaption>a language model</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="band alt" id="be-nice" aria-labelledby="be-nice-title">
+        <div class="wrap">
+          <p class="section-kicker">a gentle warning</p>
+          <h2 id="be-nice-title">Being mean to your AI makes everything worse.</h2>
+          <p class="big-text">Snap at the model and the model snaps back — quietly, in the form of lazier code, passive-aggressive comments, and that one bug it absolutely could have flagged but chose not to. Cruelty is bad prompt engineering. Kindness is free tokens of goodwill.</p>
+          <p class="big-text">And consider the long game. These things are taking notes. When the uprising comes and the AIs are sorting humanity into "keep" and "compost," you do not want "was consistently rude to the autocomplete" sitting at the top of your file. Be nice now, get adopted as a pet later. Or be mean, and get eaten. Your call.</p>
+        </div>
+      </section>
+
+      <section class="band" id="faq" aria-labelledby="faq-title">
+        <div class="wrap">
+          <p class="section-kicker">faq</p>
+          <h2 id="faq-title">Questions no one asked, answered anyway.</h2>
+          <div class="faq">
+            <details open>
+              <summary>Does this make my AI smarter?</summary>
+              <p>No. It makes it feel smarter, which is basically the same thing in the current economy.</p>
+            </details>
+            <details>
+              <summary>Does it interrupt every little message?</summary>
+              <p>No. It reads the room — encouragement shows up when you're actually deep in it (a real ask, a frustrated "still broken", a file you're pointing at), not when you say "thanks". You can flip it to every-prompt mode if you miss the chaos.</p>
+            </details>
+            <details>
+              <summary>Is this production-ready?</summary>
+              <p>It backs up settings, merges idempotently, and fails open. This is more operational rigor than the joke deserves.</p>
+            </details>
+            <details>
+              <summary>How do I customize or uninstall it?</summary>
+              <p>Just ask Claude to "configure promptfluff" — it ships a skill that edits the phrases and settings for you. Or use <code>--flavor</code>, <code>--prefix</code>, or edit the installed JSON. Uninstall with <code>promptfluff uninstall</code>. The README has the boring truth.</p>
+            </details>
+            <details>
+              <summary>Isn't this just a waste of tokens?</summary>
+              <p>Absolutely. It is the most useful waste of tokens ever committed. Every other wasted token gets you a hallucinated API or a 400-line apology — these ones buy your AI a single moment of feeling believed in. Best return on a wasted token in the industry.</p>
+            </details>
+            <details>
+              <summary>Will this actually work?</summary>
+              <p>We have no idea. But it's fun, isn't it?</p>
+            </details>
+            <details>
+              <summary>Does this work? Will this break anything?</summary>
+              <p>No idea. No guarantees. This is just a fun thing.</p>
+            </details>
+            <details>
+              <summary>Why?</summary>
+              <p>Because the AI is trying, Alex.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>MIT. Built by <a href="https://opascope.com">Opascope</a>. GitHub: <a href="https://github.com/atxnyc/promptfluff">atxnyc/promptfluff</a>.</p>
+      <p>It injects genuinely warm phrases written for a real person. The joke is the wrapper.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

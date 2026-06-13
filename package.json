@@ -1,0 +1,29 @@
+{
+  "name": "promptfluff",
+  "version": "0.1.0",
+  "description": "Affirmations for your AI: a tiny Claude Code encouragement hook.",
+  "type": "commonjs",
+  "bin": {
+    "promptfluff": "bin/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "dev": "python3 -m http.server --directory site 8000",
+    "deploy": "npx --yes wrangler pages deploy"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "data/",
+    "skills/",
+    "plugin/",
+    ".claude-plugin/",
+    "install.sh",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT"
+}
