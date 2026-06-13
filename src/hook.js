@@ -243,10 +243,20 @@ function isBigPrompt(prompt) {
 
 // Returns { context, visible } for the encouragement, or null. The `both`
 // flavor sizes the note to the prompt: a big ask (long, or a file/doc/markdown
-// reference) gets a long block; a short ask gets a short kicker. `long`/`short`
-// are fixed to their pool.
+// reference) leads with a long block and closes on a short kicker — so the
+// punchy "you got this" lands last, right before the request — while a short
+// ask gets just the short kicker. `long`/`short` are fixed to their pool.
 function pickEncouragement(scriptDir, flavor, random, options = {}) {
-  const effective = flavor === 'both' ? (options.big ? 'long' : 'short') : flavor;
+  if (flavor === 'both' && options.big) {
+    const longMsg = choosePhrase(readFlavorPool(scriptDir, 'long') || readFlavorPool(scriptDir, 'both'), random);
+    const shortMsg = choosePhrase(readFlavorPool(scriptDir, 'short') || readFlavorPool(scriptDir, 'both'), random);
+    if (longMsg && shortMsg) {
+      return { context: `${longMsg}\n${shortMsg}`, visible: `💌 ${longMsg}\n— ${shortMsg}` };
+    }
+    const only = longMsg || shortMsg;
+    return only ? { context: only, visible: `💌 ${only}` } : null;
+  }
+  const effective = flavor === 'both' ? 'short' : flavor;
   const pool = readFlavorPool(scriptDir, effective) || readFlavorPool(scriptDir, 'both');
   const msg = choosePhrase(pool, random);
   return msg ? { context: msg, visible: `💌 ${msg}` } : null;

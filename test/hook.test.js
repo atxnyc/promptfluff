@@ -92,15 +92,15 @@ test('gate:off (env) encourages even trivial prompts', () => {
 });
 
 // --- pairing / flavors -----------------------------------------------------
-test('both flavor: a long ask gets a long block', () => {
+test('both flavor: a big ask leads long, closes on the short kicker', () => {
   const output = hook.buildOutputFromFiles({
     scriptDir: SRC_DIR,
     prompt: REAL_PROMPT, // >= 10 words -> big
     dadJoke: false,
     random: () => 0
   });
-  assert.equal(output.hookSpecificOutput.additionalContext, LONG[0]);
-  assert.equal(output.systemMessage, `💌 ${LONG[0]}`);
+  assert.equal(output.hookSpecificOutput.additionalContext, `${LONG[0]}\n${SHORT[0]}`);
+  assert.equal(output.systemMessage, `💌 ${LONG[0]}\n— ${SHORT[0]}`);
 });
 
 test('both flavor: a short ask gets a short kicker', () => {
@@ -114,14 +114,14 @@ test('both flavor: a short ask gets a short kicker', () => {
   assert.equal(output.systemMessage, `💌 ${SHORT[0]}`);
 });
 
-test('both flavor: a markdown/file reference gets a long block', () => {
+test('both flavor: a markdown/file reference is big (long + kicker)', () => {
   const output = hook.buildOutputFromFiles({
     scriptDir: SRC_DIR,
     prompt: 'check the handoff.md', // short, but a file ref -> big
     dadJoke: false,
     random: () => 0
   });
-  assert.equal(output.hookSpecificOutput.additionalContext, LONG[0]);
+  assert.equal(output.hookSpecificOutput.additionalContext, `${LONG[0]}\n${SHORT[0]}`);
 });
 
 test('isBigPrompt: long or file-ref is big, short chatter is not', () => {
