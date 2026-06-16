@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DEFAULT_CONFIG = Object.freeze({
-  flavor: 'both',
+  flavor: 'short',
   prefix: '',
   // Only encourage substantive prompts (real asks / work commands); trivial
   // chatter gets nothing. See hook.js deservesEncouragement.

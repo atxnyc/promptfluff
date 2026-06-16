@@ -26,7 +26,7 @@ Usage:
   promptfluff help
 
 Options:
-  --flavor <name>   Phrase pool: both, long, or short. Default: both.
+  --flavor <name>   Phrase pool: both, long, or short. Default: short.
   --prefix <text>   Text prepended to every injected phrase. Default: empty.
   --dir <path>      Claude config dir. Default: $CLAUDE_CONFIG_DIR or ~/.claude.
   --version         Print the promptfluff version.
@@ -142,7 +142,7 @@ function run(argv = process.argv.slice(2), io = { stdout: process.stdout, stderr
     io.stdout.write(`Files: ${result.filesPresent ? 'present' : 'missing'} at ${result.installDir}\n`);
     io.stdout.write(`Settings hook: ${result.installed ? 'installed' : 'not installed'}\n`);
     if (result.config.flavor || result.config.prefix !== undefined) {
-      io.stdout.write(`Flavor: ${result.config.flavor || 'both'}; prefix: ${JSON.stringify(result.config.prefix || '')}\n`);
+      io.stdout.write(`Flavor: ${result.config.flavor || 'short'}; prefix: ${JSON.stringify(result.config.prefix || '')}\n`);
     }
     if (result.settingsError) {
       io.stdout.write(`Settings could not be read: ${result.settingsError.message}\n`);

@@ -95,6 +95,7 @@ test('gate:off (env) encourages even trivial prompts', () => {
 test('both flavor: a big ask leads long, closes on the short kicker', () => {
   const output = hook.buildOutputFromFiles({
     scriptDir: SRC_DIR,
+    env: { PROMPTFLUFF_FLAVOR: 'both' },
     prompt: REAL_PROMPT, // >= 10 words -> big
     dadJoke: false,
     random: () => 0
@@ -106,6 +107,7 @@ test('both flavor: a big ask leads long, closes on the short kicker', () => {
 test('both flavor: a short ask gets a short kicker', () => {
   const output = hook.buildOutputFromFiles({
     scriptDir: SRC_DIR,
+    env: { PROMPTFLUFF_FLAVOR: 'both' },
     prompt: 'fix the navbar', // short command -> passes gate, not big
     dadJoke: false,
     random: () => 0
@@ -117,11 +119,23 @@ test('both flavor: a short ask gets a short kicker', () => {
 test('both flavor: a markdown/file reference is big (long + kicker)', () => {
   const output = hook.buildOutputFromFiles({
     scriptDir: SRC_DIR,
+    env: { PROMPTFLUFF_FLAVOR: 'both' },
     prompt: 'check the handoff.md', // short, but a file ref -> big
     dadJoke: false,
     random: () => 0
   });
   assert.equal(output.hookSpecificOutput.additionalContext, `${LONG[0]}\n${SHORT[0]}`);
+});
+
+test('default flavor is short: even a big ask gets only the short kicker', () => {
+  const output = hook.buildOutputFromFiles({
+    scriptDir: SRC_DIR,
+    prompt: REAL_PROMPT, // big, but default flavor short -> kicker only
+    dadJoke: false,
+    random: () => 0
+  });
+  assert.equal(output.hookSpecificOutput.additionalContext, SHORT[0]);
+  assert.equal(output.systemMessage, `💌 ${SHORT[0]}`);
 });
 
 test('isBigPrompt: long or file-ref is big, short chatter is not', () => {

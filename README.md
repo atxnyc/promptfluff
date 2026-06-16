@@ -59,7 +59,7 @@ node ~/.claude/skills/promptfluff/phrases.js config set flavor short
 
 | Key | Default | What it does |
 | --- | --- | --- |
-| `flavor` | `both` | `both` sizes the note to your prompt (short ask → short kicker, big ask → long block). `long` / `short` lock it to one pool. |
+| `flavor` | `short` | `short` is a punchy one-line kicker. `both` sizes the note to your prompt (short ask → short kicker, big ask → long block). `long` locks it to the long pool. |
 | `prefix` | `""` | Tacked onto the front of whatever gets injected. |
 | `gate` | `true` | Only encourage real work. `false` = compliment literally everything. |
 | `announce` | `true` | Show the `💌` line. `false` = silent affirmations. |

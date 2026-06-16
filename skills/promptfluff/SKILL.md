@@ -67,8 +67,8 @@ node phrases.js config set announce off     # off = inject silently, no visible 
 
 What each does:
 
-- **flavor** — which pool to draw from. `both` (default) pairs a long block with
-  a short kicker; `long`/`short` use a single phrase.
+- **flavor** — which pool to draw from. `short` (default) is a single punchy
+  kicker; `both` pairs a long block with a short kicker; `long` uses one long phrase.
 - **prefix** — string prepended to the phrase injected into the model's context.
 - **gate** — when `on` (default) only substantive prompts get encouragement
   (long asks, build/fix commands, frustration, file/error references); trivial

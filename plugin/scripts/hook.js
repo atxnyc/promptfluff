@@ -10,7 +10,7 @@ try {
 } catch (_error) {
   config = {
     resolveConfig() {
-      return { flavor: 'both', prefix: '', gate: true, announce: true, dadJokeOdds: 420 };
+      return { flavor: 'short', prefix: '', gate: true, announce: true, dadJokeOdds: 420 };
     },
     poolFileForFlavor() {
       return 'encouragements.json';
